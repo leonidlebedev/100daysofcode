@@ -3,8 +3,11 @@
 ## День 4
 
 Структуры данных. https://docs.python.org/3/tutorial/datastructures.html
+
 list — mutable
+
 tuple — immutable
+
 dict
 
 ```python
@@ -14,17 +17,15 @@ list('hello') # ['h', 'e', 'l', 'l', 'o']
 l = [1, 2, 3]
 del l[0] # l == [1, 2]
 
-[1, 2, 3].reverse() # [3, 2, 1]
-[3, 2, 1].sort() # [1, 2, 3]
-[1, 2, 3].pop() # return 3, change list [1, 2]
-[1, 2, 3].append(4) # [1, 2, 3, 4]
-[1, 2, 3].insert(0, 10) # [10, 1, 2, 3]
+[1, 2, 3].reverse() # return None / [3, 2, 1]
+[3, 2, 1].sort() # return None / [1, 2, 3]
+[1, 2, 3].pop() # return 3 / [1, 2]
+[1, 2, 3].append(4) # return None / [1, 2, 3, 4]
+[1, 2, 3].insert(0, 10) # return None / [10, 1, 2, 3]
 
 for num in [1, 2, 3]:
-    print(num)
-# 1
-# 2
-# 3
+    print(num, end=',')
+# 1,2,3,
 
 '-'.join(['a', 'b', 'c']) # '1-2-3'
 ```
@@ -35,9 +36,8 @@ t[0] = 20 # ERROR
 ```
 ```python
 # dict
-fruits = {'apple': 10, 'orange': 15}
-# or
-fruits = dict([('apple', 10), ('orange', 15)])
+fruits = {'apple': 10, 'orange': 15} or dict([('apple', 10), ('orange', 15)])
+
 fruits['mango'] = 1 # {'apple': 10, 'orange': 15, 'mango': 1}
 del fruits['mango'] # {'apple': 10, 'orange': 15}
 
@@ -53,9 +53,12 @@ for key, value in fruits.items():
 
 ## День 1-3
 
-Изучение работы с датой и временем. Написание скрипта по замене символов в файле.
+Изучение работы с датой и временем. 
+
+Написание скрипта по замене символов в файле.
+
 Дока по datetime: https://docs.python.org/3/library/datetime.html
-Полезные куски кода:
+
 ```python
 # Работа с датой
 from datetime import datetime
