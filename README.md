@@ -1,5 +1,59 @@
 # 100daysofcode
 
+## День 7
+
+Дополнительные тонкости
+
+```python
+a, b = 1, 3
+# a = 1
+# b = 3
+
+17 / 3 # 5.66... (всегда float)
+17 // 3 # 5 (целая часть)
+
+# string — immutable
+'a' 'b' # 'ab', неявная конкатенация
+str = (
+    'hello'
+    'world'
+) # helloworld
+
+3 * 'm' + 3 * '.' # 'mmm...'
+word = 'Python'
+word[-1] # n
+word[2:] # thon
+word[-2:] # on
+
+range(5) # 0, 1, 2, 3, 4
+range(0, 10, 4) # 0, 4, 8
+
+def f(a, b=1, c=2):
+    ...
+f(a=1, c=10) # equal f(1, 1, 10)
+
+def f(*arguments, **keywords):
+    for arg in arguments:
+        print(arg, end=',')
+    for kw in keywords:
+        print(kw, ":", keywords[kw])
+
+f(1, 2, 3, a=1, b=2)
+f(*[1, 2, 3], **{'a': 1, 'b': 2})
+# 1,2,3
+# a: 1
+# b: 2
+
+# https://docs.python.org/3/tutorial/controlflow.html#special-parameters
+def f(pos1, /, pos_or_kwd, *, kwd1):
+      ----     ----------     ----
+        |          |            |
+        |          |        Keyword only
+        |  Positional or keyword 
+   Positional only
+```
+
+
 ## День 4
 
 Структуры данных. https://docs.python.org/3/tutorial/datastructures.html
