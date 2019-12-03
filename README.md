@@ -1,6 +1,6 @@
 # 100daysofcode
 
-## День 7
+## День 7-8
 
 Дополнительные тонкости
 
@@ -27,7 +27,8 @@ word[-2:] # on
 
 range(5) # 0, 1, 2, 3, 4
 range(0, 10, 4) # 0, 4, 8
-
+```
+```python
 def f(a, b=1, c=2):
     ...
 f(a=1, c=10) # equal f(1, 1, 10)
@@ -51,6 +52,14 @@ def f(pos1, /, pos_or_kwd, *, kwd1):
         |          |        Keyword only
         |  Positional or keyword 
    Positional only
+
+lambda a: a + 1
+# equal
+def f(a):
+    return a + 1
+
+f.__doc__ # https://docs.python.org/3/tutorial/controlflow.html#documentation-strings
+f.__annotations__ # https://docs.python.org/3/tutorial/controlflow.html#function-annotations
 ```
 
 
