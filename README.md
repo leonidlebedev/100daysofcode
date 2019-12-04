@@ -1,5 +1,53 @@
 # 100daysofcode
 
+## День 9
+
+Новые структуры данных
+
+deque - https://docs.python.org/3/library/collections.html#collections.deque
+```python
+from collections import deque
+queue = deque([1, 2, 3])
+queue.append(4) # None / deque([1, 2, 3, 4])
+queue.appendleft(0) # None / deque([0, 1, 2, 3, 4])
+queue.rotate(1) # None / deque([4, 0, 1, 2, 3])
+queue.popleft() # 4 / deque([0, 1, 2, 3])
+```
+
+list comprehensions — https://docs.python.org/3/tutorial/datastructures.html#nested-list-comprehensions
+```python
+[(x, x**2) for x in range(6)]
+# [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+
+[(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y]
+# [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+]
+[[row[i] for row in matrix] for i in range(4)]
+# [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+```
+
+sets — https://docs.python.org/3/tutorial/datastructures.html#sets
+```python
+nums = {1, 2, 3, 2, 4, 5, 2, 1, 4} # {1, 2, 3, 4, 5}
+set = {} # создаст словарь, надо использовать set() для пустого значения
+type(set) # <class 'dict'>
+
+a = set('abracadabra') # {'a', 'r', 'b', 'c', 'd'}
+b = set('alacazam') # {'a', 'l', 'c', 'z', 'm'}
+a - b # letters in a but not in b      | {'r', 'd', 'b'}
+a | b # letters in a or b or both      | {'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
+a & b # letters in both a and b        | {'a', 'c'}
+a ^ b # letters in a or b but not both | {'r', 'd', 'b', 'm', 'z', 'l'}
+
+{x for x in 'abracadabra' if x not in 'abc'} # {'r', 'd'}
+```
+
+
 ## День 7-8
 
 Дополнительные тонкости
@@ -79,12 +127,15 @@ list() == [] # <class 'list'>
 list('hello') # ['h', 'e', 'l', 'l', 'o']
 l = [1, 2, 3]
 del l[0] # l == [1, 2]
+del a[:] # l == []
 
 [1, 2, 3].reverse() # return None / [3, 2, 1]
 [3, 2, 1].sort() # return None / [1, 2, 3]
 [1, 2, 3].pop() # return 3 / [1, 2]
 [1, 2, 3].append(4) # return None / [1, 2, 3, 4]
 [1, 2, 3].insert(0, 10) # return None / [10, 1, 2, 3]
+[1, 2, 3].count(2) # 1
+[1, 2, 3].index(3) # 2
 
 for num in [1, 2, 3]:
     print(num, end=',')
@@ -95,6 +146,8 @@ for num in [1, 2, 3]:
 ```python
 # tuple
 t = tuple([1, 2, 3])
+# убогий вариант 
+t = 1, 2, 3 # (1, 2, 3)
 t[0] = 20 # ERROR
 ```
 ```python
