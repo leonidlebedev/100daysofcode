@@ -1,6 +1,6 @@
 # 100daysofcode
 
-## День 9
+## День 9-10
 
 Новые структуры данных
 
@@ -47,6 +47,38 @@ a ^ b # letters in a or b but not both | {'r', 'd', 'b', 'm', 'z', 'l'}
 {x for x in 'abracadabra' if x not in 'abc'} # {'r', 'd'}
 ```
 
+namedtuple — https://docs.python.org/3/library/collections.html#namedtuple-factory-function-for-tuples-with-named-fields
+```python
+from collections import namedtuple
+
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(11, y=22)
+p[0] + p[1] # 33
+p._asdict() # {'x': 11, 'y': 22}
+p._fields # ('x', 'y')
+
+t = [1, 2]
+Point._make(t) # Point(x=1, y=2)
+```
+
+defaultdict — https://docs.python.org/3/library/collections.html#defaultdict-objects
+```python
+from collections import defaultdict
+
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+d = defaultdict(list)
+for k, v in s:
+    d[k].append(v) # с объектом такое не прокатит, будет ошибка KeyError
+
+d # defaultdict(<class 'list'>, {'yellow': [1, 3], 'blue': [2, 4], 'red': [1]})
+```
+
+Counter — https://docs.python.org/3/library/collections.html#counter-objects
+```python
+from collections import Counter
+cntr = Counter('sadqwdcxcvdfecdxcd')
+cntr.most_common(5) # [('d', 5), ('c', 4), ('x', 2), ('s', 1), ('a', 1)]
+```
 
 ## День 7-8
 
