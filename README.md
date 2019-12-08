@@ -1,5 +1,14 @@
 # 100daysofcode
 
+## Day 13
+
+Тесты, pytest, pytest-cov
+
+```python
+import random
+random.randint(START, END)
+```
+
 ## День 9-10
 
 Новые структуры данных
